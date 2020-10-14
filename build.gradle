@@ -47,6 +47,17 @@ allprojects {
         version += ".${System.getenv("BUILD_NUMBER")}"
 }
 
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.3
+            }
+        }
+    }
+}
+check.dependsOn jacocoTestCoverageVerification
+
 subprojects {
     repositories {
         mavenCentral()
