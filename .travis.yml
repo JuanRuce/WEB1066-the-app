@@ -3,3 +3,6 @@ jdk: oraclejdk8
 dist: trusty
 before_install:
  - chmod +x gradlew
+scrip: 
+echo 'testing coming soon'
+./gradlew test
