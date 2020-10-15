@@ -56,18 +56,7 @@ subprojects {
         maven { url 'http://maven.restlet.org' }
     }
     
-    jacocoTestCoverageVerification {
-    violationRules {
-        rule {
-            limit {
-                minimum = 0.3
-            }
-         }
-      }
-    }
-    check.dependsOn jacocoTestCoverageVerification
- 
-    configurations {
+     configurations {
         all {
             resolutionStrategy.failOnVersionConflict()
             resolutionStrategy {
