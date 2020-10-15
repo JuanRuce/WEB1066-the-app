@@ -4,4 +4,4 @@ dist: trusty
 before_install:
  - chmod +x gradlew
 script: 
- echo 'testing coming soon'
+ ./gradlew test
