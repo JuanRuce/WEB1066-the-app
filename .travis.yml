@@ -1,34 +1,5 @@
 language: java
+   jdk: oraclejdk8
 dist: trusty
 before_install:
  - chmod +x gradlew
- 
-matrix:
-  include:
-# Java 8  "Oracle JDK"
-- env: JDK='oraclejdk 8'
-   jdk: oraclejdk8  
-   script: 
- - COVERAGE=0.05 ./gradlew -p ./monolithic/ui check
- - COVERAGE=0.14 ./gradlew -p ./monolithic/service/cart check
- - COVERAGE=0.0 ./gradlew -p ./monolithic/service/user check
- - COVERAGE=0.0 ./gradlew -p ./monolithic/repository/cart check
- - COVERAGE=0.24 ./gradlew -p ./monolithic/repository/order check
- - COVERAGE=0.12 ./gradlew -p ./monolithic/repository/product check
- - COVERAGE=0.24 ./gradlew -p ./monolithic/repository/user check
-deploy:
-  provider: s3
-   
-# Java 9 "OpenJDK"
-- env: JDK='oraclejdk 9'
-   jdk: oraclejdk9  
-script: 
- - COVERAGE=0.05 ./gradlew -p ./monolithic/ui check
- - COVERAGE=0.14 ./gradlew -p ./monolithic/service/cart check
- - COVERAGE=0.0 ./gradlew -p ./monolithic/service/user check
- - COVERAGE=0.0 ./gradlew -p ./monolithic/repository/cart check
- - COVERAGE=0.24 ./gradlew -p ./monolithic/repository/order check
- - COVERAGE=0.12 ./gradlew -p ./monolithic/repository/product check
- - COVERAGE=0.24 ./gradlew -p ./monolithic/repository/user check
-deploy:
-  provider: s3
