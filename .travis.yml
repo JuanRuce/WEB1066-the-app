@@ -33,3 +33,5 @@ script:
  - COVERAGE=0.24 ./gradlew -p ./monolithic/repository/user check
 deploy:
   provider: s3
+
+# Add tag versioning
