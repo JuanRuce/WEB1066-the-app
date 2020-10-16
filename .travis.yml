@@ -7,10 +7,10 @@ script:
  - ./gradlew test
  - ./gradlew jacocoTestReport
  - ./gradlew test jacocoTestCoverageVerification
- - COVERAGE=0.5 ./gradlew -p ./monolithic/ui check
- - COVERAGE=0.5 ./gradlew -p ./monolithic/service/cart check
- - COVERAGE=0.5 ./gradlew -p ./monolithic/service/user check
- - COVERAGE=0.5 ./gradlew -p ./monolithic/repository/cart check
- - COVERAGE=0.5 ./gradlew -p ./monolithic/repository/order check
- - COVERAGE=0.5 ./gradlew -p ./monolithic/repository/product check
- - COVERAGE=0.3 ./gradlew -p ./monolithic/repository/user check
+ - COVERAGE=0.24 ./gradlew -p ./monolithic/ui check
+ - COVERAGE=0.24 ./gradlew -p ./monolithic/service/cart check
+ - COVERAGE=0.24 ./gradlew -p ./monolithic/service/user check
+ - COVERAGE=0.24 ./gradlew -p ./monolithic/repository/cart check
+ - COVERAGE=0.24 ./gradlew -p ./monolithic/repository/order check
+ - COVERAGE=0.24 ./gradlew -p ./monolithic/repository/product check
+ - COVERAGE=0.24 ./gradlew -p ./monolithic/repository/user check
