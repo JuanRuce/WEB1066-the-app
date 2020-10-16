@@ -1,20 +1,18 @@
 language: java
-jdk: oraclejdk8  
 dist: trusty
+matrix:
+  include:
+  # JDK Oracle JDK 8
+  - jdk: oraclejdk8
+    os: linux
+  # JDK Oracle JDK 9
+  - jdk: oraclejdk9
+    os: linux
 
 before_install:
 - chmod +x gradlew
 - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
 
-jobs:
-  include:
-  - stage: ☕ jdk.java.net - OpenJDK - GPL
-    env: JDK=8
-    script: source install-jdk.sh -F 8
-  - # stage: ...
-    env: JDK=9
-    script: source install-jdk.sh -F 9
-    
 script: 
  - COVERAGE=0.05 ./gradlew -p ./monolithic/ui check
  - COVERAGE=0.14 ./gradlew -p ./monolithic/service/cart check
