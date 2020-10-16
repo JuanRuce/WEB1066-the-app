@@ -8,4 +8,6 @@ script:
  ./gradlew jacocoTestReport
  find . -name jacocoTestReport.csv|xargs cat|awk -F',' '{print $3" "$4" "$5}'
 deploy:
-  skip_cleanup: true
+   provider: s3
+   on:
+     repo: travis-ci/dpl
