@@ -4,10 +4,9 @@ dist: trusty
 before_install:
  - chmod +x gradlew
 script: 
- ./gradlew test
- ./gradlew jacocoTestReport
- ./gradlew test jacocoTestCoverageVerification
-script:
+ - ./gradlew test
+ - ./gradlew jacocoTestReport
+ - ./gradlew test jacocoTestCoverageVerification
  - COVERAGE=0.5 ./gradlew -p ./monolithic/ui check
  - COVERAGE=0.5 ./gradlew -p ./monolithic/service/cart check
  - COVERAGE=0.5 ./gradlew -p ./monolithic/service/user check
