@@ -21,7 +21,7 @@ deploy:
    
 # Java 9 "OpenJDK"
 - env: JDK='oraclejdk 9'
-   jdk: oraclejdk8  
+   jdk: oraclejdk9  
 script: 
  - COVERAGE=0.05 ./gradlew -p ./monolithic/ui check
  - COVERAGE=0.14 ./gradlew -p ./monolithic/service/cart check
